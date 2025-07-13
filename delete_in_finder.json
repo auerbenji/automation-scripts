@@ -1,0 +1,32 @@
+{
+  "title": "Delete in Finder with Option+D",
+  "rules": [
+    {
+      "description": "Press Option+D in Finder to delete selected file(s)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": ["option"]
+            }
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.finder$"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "shell_command": "osascript /Users/benji/Documents/gitprojects/automation-scripts/delete_selected_files.applescript"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
